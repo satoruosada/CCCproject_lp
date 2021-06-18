@@ -1,0 +1,183 @@
+
+// ナンバー
+.text-image {
+	position: relative;
+	width: 350px;
+	margin: 0 auto
+}
+
+.text-image img {	
+	width: 100%;
+	margin-bottom: 15px;
+}
+  
+.text-image p {
+	top: 23%;
+	left: 34%;
+	font-size: 50px;
+	color: black;
+}
+
+.youtube {
+    margin: 0 auto !important;
+    width: 70vw !important;
+    position: relative;
+    top: 3vw;
+}
+
+.main {
+    &__image {
+        &-map {
+            top: 15vw;
+        }
+    }
+    &__text {
+        &-top {
+            &-des {
+                font-size: 14px;
+            }
+        }
+        &-under {
+            &-des {
+                font-size: 14px;
+            }
+        }
+    }
+    &__underlogoimages {
+        top: 0vw;
+    }
+}
+
+.syokunin {
+    &__center {
+        flex-direction: row-reverse;
+    }
+    &__numberimages {
+        width: 40vw;
+    }
+    &__syokunin {
+		font-size: 20px;
+        position: relative;
+        top: 1vw;
+	}
+	&__name {
+		font-size: 30px;
+       
+        &-wrapper {
+            width: 50vw;
+            position: relative;
+            left: 3vw;
+            text-align: left;
+	    }
+    }
+	&__englishsyokunin {
+		font-size: 15px;
+	}
+	&__englishname {
+		font-size: 16px;
+	}
+
+    &__logo {
+        display: block;
+        font-size: 73px;
+        color: #FFFFFF;
+    }
+    &__text {
+        &-wrapper {
+            width: 50%;
+        }
+    }
+    &__left {
+        align-items: center;
+    }
+    &__syokuninimages {
+        width:50%;
+    }
+
+    &__topimages {
+		display: block;
+        width: 40vw;
+        position: relative;
+        top: 10vw;
+        left: -15vw;
+        z-index: -1;
+	}
+
+
+    &__douga-images {
+        width: 60%;
+        height: 315;
+    }
+}
+
+
+.sushi {
+
+    &__backimages {
+        height: 100%;
+    }
+
+    &__top {
+        flex-direction: row-reverse;
+    }
+    &__center {
+        flex-direction: row;
+       
+    }
+    &__text {
+        &-wrapper {
+            width: 50%;
+        }
+    }
+    &__left {
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+    &__numberimages {
+        width: 40vw;
+    }
+    &__syokuninimages {
+        width:50%;
+        margin-right: 20px;
+    }
+
+    &__syokunin {
+		font-size: 20px;
+        position: relative;
+        top: 1vw;
+	}
+	&__name {
+		font-size: 30px;
+       
+        &-wrapper {
+            width: 50vw;
+            position: relative;
+            left: 3vw;
+            text-align: left;
+	    }
+    }
+	&__englishsyokunin {
+		font-size: 15px;
+	}
+	&__englishname {
+		font-size: 16px;
+	}
+
+    &__topimages {
+		display: block;
+        width: 40vw;
+        position: relative;
+        top: 5vw;
+        left: -15vw;
+        z-index: -1;
+	}
+
+
+    &__douga {
+        &-images {
+            width: 50%;
+        }
+    }
+}
+
+

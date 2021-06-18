@@ -1,0 +1,91 @@
+.mobile-menu {
+     &__name {
+         font-size: 20px;
+        &-wrapper {
+            position: absolute;
+            top: 10%;
+            right: 10px;
+            width:calc(55% - 10px);
+            padding-left: 20px;
+            box-sizing: border-box;
+
+            &-top {
+                
+            } 
+
+           &-under {
+               position: relative;
+               top: 20%;
+           }
+        }
+    }
+    &__syokunin {
+    color: #9d8121;
+    font-size: 16px;
+    }
+
+    &__englishsyokunin {
+      color: #9d8121;
+      font-size: 14px;
+    }
+
+    &__englishname {
+      color: black;
+      font-size: 14px;
+  }
+}
+
+.main {
+    position: relative;
+    &__logoimages {
+       width:40vw;
+       left: -25vw;
+    }
+    &__underlogoimages {
+        float: right;
+        text-align: right;
+        right: -30vw;
+    }
+    &__image {
+        &-map {
+          width: 40vw;
+        }
+        &-fuji {
+            top: 20vw;
+            left: 22vw;
+        }
+        &-shizuoka {
+            top: 13vw;
+        }
+        
+        &-yajirushi {
+            width: 7vw;
+            top: 19vw;
+            left: 15vw;
+        }
+    }
+}
+
+.syokunin {
+    &__backimage {
+       
+    }
+    &__name {
+       
+    }
+}
+
+.sushi {
+    &__backimage {
+        height: 100%;
+    }
+    &__name {
+        &-wrapper {
+            width: 90vw;
+            position: relative;
+            left: 14vw;
+            
+	    }
+    }
+}
+

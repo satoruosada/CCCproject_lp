@@ -1,0 +1,314 @@
+.font-sm {
+    font-size: 16px;
+}
+.font-md {
+  font-size: 19px;
+}
+.font-lr {
+  font-size: 23px;
+}
+.font-lg {
+  font-size: 36px;
+}
+.mb-lg {
+  margin-bottom: 10px !important;
+}
+.pt-lg {
+  padding-top: 100px !important;
+}
+.pb-lg {
+  padding-bottom: 190px !important;
+}
+
+
+// ナンバー
+.text-image {
+	position: relative;
+	
+	margin: 0 auto
+}
+
+.text-image img {	
+	width: 100%;
+	margin-bottom: 15px;
+}
+  
+.text-image p {
+	top: 30%;
+	left: 38%;
+	font-size: 50px;
+	color: black;
+}
+
+.youtube {
+    margin: 0 auto !important;
+    width: 70vw !important;
+    position: relative;
+    top: 0vw;
+}
+
+
+
+.mobile-menu {
+    &__cover {
+          height: auto;
+    }
+    &__ul {
+        width: 80%;
+        min-width: 960px;
+        max-width:1200px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+         padding-bottom: 30px;
+         margin: 0 auto;
+    }
+
+    &__li {
+	    width: 32%;
+        height: 120px;
+        margin: 10px 0 10px 2%;
+        position: relative;
+    
+        &:last-child {
+            margin-bottom:10px;
+        }
+        &:nth-child(3n + 1) {
+            margin-left: 0;
+        }
+    }
+     &__name {
+         font-size: 20px;
+         padding-bottom: 5px;
+        &-wrapper {
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            width:calc(55% - 10px);
+            padding-left: 30px;
+            box-sizing: border-box;
+            text-align: left;
+
+            &-top {
+                
+            } 
+
+           &-under {
+               position: relative;
+               top: 20%;
+           }
+        }
+    }
+    &__syokunin {
+    color: #9d8121;
+    font-size: 16px;
+    }
+
+    &__englishsyokunin {
+      color: #9d8121;
+      font-size: 12px;
+    }
+
+    &__englishname {
+      color: black;
+      font-size: 13px;
+  }
+
+    &__personimages-tatami {
+       background-image: url(../images/Tatami_main.jpg);
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       width: 46%;
+       height: calc(100% - 20px);
+       position: absolute;
+       top: 10px;
+       left: 10px;
+
+       &::before {
+           content: '';
+           display: block;
+           padding-top: 60%;
+       }
+    }
+
+    &__personimages-sushi {
+       background-image: url(../images/sinsengumiA.jpg);
+       background-position: top;
+       background-repeat: no-repeat;
+       background-size: cover;
+       width: 46%;
+       height: calc(100% - 20px);
+       position: absolute;
+       top: 10px;
+       left: 10px;
+
+       &::before {
+           content: '';
+           display: block;
+           padding-top: 60%;
+       }
+    }
+
+    &__personimages-soba {
+       background-image: url(../images/Soba_main_mobile.jpg);
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       width: 46%;
+       height: calc(100% - 20px);
+       position: absolute;
+       top: 10px;
+       left: 10px;
+
+       &::before {
+           content: '';
+           display: block;
+           padding-top: 60%;
+       }
+    }
+
+}
+
+.menu-open {
+    & .mobile-menu {
+        &__cover {
+          height: auto;
+        }
+    }
+}
+
+     .mobile-menu {
+        &__ul {
+           
+        }
+    }
+
+
+.hero {
+
+    &__title {
+   
+        &-japan {
+          font-size: 50px;
+        }
+        &-syokunin {
+          font-size: 50px;
+        }
+        &-under {
+          font-size: 24px;
+        }
+     }
+}
+
+.main {
+    margin-bottom: -200px;
+    &__text {
+        padding-top: 10px;
+
+        &-top {
+            padding-top: 10px;
+        }
+    }
+
+    &__logoimages {
+       width:40vw;
+       left: -15vw;
+    }
+    &__underlogoimages {
+        width: 40vw;
+        float: right;
+        text-align: right;
+        right: -20vw;
+        top: -10vw;
+    }
+  
+    &__text {
+        width: 45%;
+        margin-right: 30px;
+    }
+    &__images {
+        width: 45%;
+        padding-top: 60px;
+    }
+    &__image {
+        &-map {
+            // top: -10vw;
+        }
+    }
+}
+
+.syokunin {
+    &__backimage {
+        
+    }
+    &__numberimage {
+        width: 50vw;
+    }
+    
+    &__syokuninimages {
+
+		&::before {
+			content: '';
+			display: block;
+			padding-top: 70%;
+		}
+    }
+    &__logo {
+        display: block;
+        font-size: 120px;
+    }
+
+    &__douga-images {
+        width: 60%;
+        height: 315;
+        display: inline-block;
+        margin-left: 190px;
+    }
+
+}
+
+.sushi {
+    &__backimage {
+        height: 100%;
+        bottom: -10%;
+    }
+    &__numberimage {
+        width: 50vw;
+    }
+    &__syokunin {
+		font-size: 30px;
+       
+	}
+	&__name {
+		font-size: 40px;
+		
+        &-wrapper {
+            width: 80vw;
+            bottom: 1vw;
+           
+        }
+	}
+	&__englishsyokunin {
+		font-size: 20px;
+	}
+	&__englishname {
+		font-size: 23px;
+		
+	}
+    &__logo {
+        display: block;
+        font-size: 105px;
+    }
+    &__bottomimages {
+        right: -50vw;
+        top: -5vw;
+    }
+}
+
+
+.footer {
+    height: 160px;
+}

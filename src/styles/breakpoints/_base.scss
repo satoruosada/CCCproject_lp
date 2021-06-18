@@ -1,0 +1,861 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+body {
+  font-family: "Noto Sans JP", "Noto Serif JP", "Spectral", sans-serif;
+  background-image: url(../images/haikei.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#global-container {
+  overflow: hidden;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+.font-sm {
+  font-size: 14px;
+}
+.font-md {
+  font-size: 24px;
+}
+.font-lr {
+  font-size: 26px;
+}
+.font-lg {
+  font-size: 28px;
+}
+
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+// ナンバー
+.number-image {
+  background-image: url(../images/number.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 212px;
+  position: relative;
+  margin: 0 auto;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+}
+.number {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  font-size: 63px;
+  width: 100%;
+  text-align: center;
+  font-family: "Spectral", serif;
+}
+
+// youtubbe
+.syokunin__movie {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  background-color: black;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    box-sizing: content-box;
+    padding-bottom: 56.25%;
+  }
+
+  & > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// メニュー表示
+.mobile-menu {
+  &__nav {
+    padding-top: 30px;
+  }
+
+   &__ul {
+	padding:0 0 75px;
+	margin: 0;
+  }
+
+  &__li {
+	width: 80%;
+	height: 130px;
+	background-color:#ffff;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 30px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+  }
+
+  &__syokunin {
+    color: #9d8121;
+  }
+  &__name {
+    color: black;
+    font-size: 26px;
+  }
+
+  &__englishsyokunin {
+    color: #9d8121;
+    font-size: 15px;
+  }
+
+  &__englishname {
+    color: black;
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+
+    & > span {
+      background-color: #9d8121;
+      width: 35px;
+      height: 2px;
+      display: block;
+      margin-bottom: 9px;
+      transition: transform 0.7s;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__cover {
+    position: fixed;
+    height: calc(100vh - 75px);
+	top: 75px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: auto;
+    background: rgba(17, 17, 17, 0.9);
+    transition: all 0.6s;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-100%);
+  }
+
+  &__personimages {
+    display: none;
+  }
+}
+
+// メニューオープンした時
+.menu-open {
+  & .mobile-menu {
+    &__cover {
+	  visibility: visible;
+	  transform: none;
+	  opacity: 1;
+    }
+    &__btn {
+      & > span {
+        background-color: #9d8121;
+
+        &:nth-child(1) {
+          transition-delay: 70ms;
+          transform: translateY(11px) rotate(135deg);
+        }
+        &:nth-child(2) {
+          transition-delay: 0s;
+          transform: translateX(-18px) scaleX(0);
+        }
+        &:nth-child(3) {
+          transition-delay: 140ms;
+          transform: translateY(-11px) rotate(-135deg);
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu {
+ 
+}
+
+// ヘッダー
+.header {
+  background-image: url(../images/haikei.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+
+  &.triggered {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  &__inner {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1800px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5px;
+
+    &-title {
+      display: inline-flex;
+      align-items: flex-end;
+    }
+  }
+  &__logo {
+    width: 70%;
+  }
+
+  &__title {
+    &-english {
+      @extend .font-sm;
+      color: #9d8121;
+      position: relative;
+      top: 6px;
+      letter-spacing: 1.8px;
+    }
+    &-japan {
+      @extend .font-sm;
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
+
+// ヒーロー
+.hero {
+  position: relative;
+  padding-top: 75px;
+
+  &__video {
+    width: 100%;
+    height: calc(100vh - 75px);
+    background-image: url(../images/sushisyokunin.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    font-family: "Noto Serif JP", serif;
+
+    &-japan {
+      font-size: 40px;
+      color: white;
+    }
+    &-syokunin {
+      font-size: 40px;
+      color: white;
+      padding-left: 60px;
+    }
+    &-under {
+      @extend .font-md;
+      color: white;
+      font-size: 13px;
+      padding-left: 4px;
+    }
+  }
+}
+
+// メイン
+.main {
+  position: relative;
+  margin-bottom: -150px;
+
+  &__logoimages {
+    width: 70vw;
+    position: relative;
+    left: -20vw;
+    padding: 20px 0;
+  }
+
+  &__inner {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-top: 40px;
+    @extend .flex;
+  }
+
+  &__container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  &__text {
+    position: relative;
+    z-index: 2;
+    &-top {
+      &-title {
+        font-size: 16px;
+        margin: 0 30px;
+        text-align: center;
+        color: #9d8121;
+        font-weight: bold;
+      }
+      &-des {
+        font-size: 14px;
+        padding-top: 10px;
+        padding-bottom: 30px;
+        letter-spacing: 2.1px;
+        text-align: left;
+      }
+    }
+
+    &-under {
+      &-title {
+        font-size: 16px;
+        margin: 0 30px;
+        text-align: center;
+        color: #9d8121;
+        font-weight: bold;
+      }
+      &-des {
+        font-size: 14px;
+        padding-top: 10px;
+        padding-bottom: 30px;
+        letter-spacing: 1.7px;
+        text-align: left;
+      }
+    }
+  }
+
+  &__images {
+    position: relative;
+    bottom: 250px;
+    z-index: 1;
+  }
+  &__underlogoimages {
+    width: 70vw;
+    position: relative;
+    bottom: 26vw;
+    float: right;
+    text-align: right;
+    right: -25vw;
+  }
+
+  &__image {
+    &-map {
+      position: relative;
+      background-image: url(../images/map.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 90%;
+      opacity: 0.6;
+      &::before {
+        content: "";
+        display: block;
+        padding-top: 112%;
+      }
+    }
+    &-shizuoka {
+      background-image: url(../images/shizuola.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 30vw;
+      position: absolute;
+      top: 30vw;
+      left: 10vw;
+      display: none;
+      &::before {
+        content: "";
+        display: block;
+        padding-top: 50%;
+      }
+    }
+    &-yajirushi {
+      background-image: url(../images/yajirushi.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size:contain;
+      width: 13vw;
+      position: absolute;
+      top: 40vw;
+      left: 30vw;
+      display: none;
+      &::before {
+        content: "";
+        display: block;
+        padding-top: 150%;
+      }
+    }
+
+    &-fuji {
+      background-image: url(../images/fuji.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size:contain;
+      width: 50%;
+      position: absolute;
+      top: 40vw;
+      left: 48vw;
+      &::before {
+        content: "";
+        display: block;
+        padding-top: 30%;
+      }
+    }
+  }
+}
+
+.syokunin {
+  position: relative;
+  margin-top: -150px;
+
+  &:nth-child(2n + 1) {
+	margin-top: 180px;
+	margin-bottom: 180px;
+	&__syokunin {
+	  font-size: 90px;
+	}
+  }
+
+  &:nth-child(2n) {
+    margin-top: 180px;
+  }
+
+
+  &__wrapper {
+    position: relative;
+    bottom: 280px;
+  }
+
+  &__backimages {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+    background-color: rgba(224, 220, 182, 0.5);
+    mix-blend-mode: multiply;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 10%,
+      black 80%,
+      transparent 100%
+    );
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: #e0dcb6;
+    //   mask-image: linear-gradient(to left, #e0dcb6 50%, transparent 100%);
+    // }
+  }
+
+  &__backimage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: multiply;
+	mask-image: linear-gradient(to right, #fff 0%, transparent 100%);
+
+	.syokunin:nth-child(2n) & {
+		mask-image: linear-gradient(to left, #fff 0%, transparent 100%);
+    	right: 0;
+		left: auto;
+	}
+  }
+
+  &__syokuninimages {
+    margin-bottom: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 60%;
+    }
+  }
+
+  &__inner {
+    @extend .content-width;
+    position: relative;
+    top: 80px;
+    z-index: 2;
+  }
+
+  &__top {
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+  &__left {
+    @extend .flex;
+    width: 100%;
+    flex-wrap: wrap;
+    z-index: 2;
+    position: relative;
+	
+  }
+  &__right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
+	.syokunin:nth-child(2n) & {
+		right: auto;
+		left: 0;
+	}
+  }
+
+  &__tatamiimages {
+    display: none;
+  }
+  &__center {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  &__syokunin {
+    color: #9d8121;
+    font-size: 22px;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+  }
+  &__name {
+    font-size: 28px;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+
+    &-wrapper {
+      margin-bottom: 30px;
+      text-align: center;
+
+    }
+  }
+  &__englishsyokunin {
+    color: #9d8121;
+    font-size: 16px;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+  }
+  &__englishname {
+    font-size: 20px;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+  }
+
+  &__logo {
+    display: none;
+    font-family: "Spectral", serif;
+    opacity: 0.5;
+  }
+
+  &__text {
+    padding: 30px 20px;
+
+    z-index: 1;
+    position: relative;
+    &-wrapper {
+      position: relative;
+
+      &-back {
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+       width: 112%;
+    	margin: 0 -6%;
+        height: 100%;
+        box-shadow: 3px 3px 3px gray;
+        opacity: 0.5;
+        z-index: 0;
+      }
+    }
+
+    &-japan {
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__douga {
+    &-images {
+      margin: 0 auto;
+      width: 100%;
+      height: 315px;
+      z-index: 2;
+    }
+  }
+
+  &__topimages {
+    position: absolute;
+    width: 40%;
+    bottom: 22%;
+    left: -15%;
+    z-index: -1;
+    display: none;
+	.syokunin:nth-child(2n) & {
+    	right: -15%;
+		left: auto;
+		transform: scaleX(-1);
+	}
+  }
+
+  &__bottomimages {
+    position: absolute;
+    width: 70vw;
+    bottom: -5%;
+    left: 43%;
+    z-index: -1;
+
+	.syokunin:nth-child(2n) & {
+    	left: auto;
+		right: 43%;
+		transform: scaleX(-1);
+
+	}
+  }
+  &__tenpu {
+    margin-bottom: 100px;
+  }
+}
+
+.sushi {
+  position: relative;
+  margin-bottom: 150px;
+
+  &__backimages {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+    background-color: rgba(224, 220, 182, 0.5);
+    mix-blend-mode: multiply;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 10%,
+      black 80%,
+      transparent 100%
+    );
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #e0dcb6;
+      mask-image: linear-gradient(to left, #e0dcb6 50%, transparent 100%);
+    }
+  }
+
+  &__backimage {
+    background-image: url(../images/sushi_haikei.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 25%;
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    bottom: 25%;
+    right: 0;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 10% black 90%,
+      transparent 100%
+    );
+  }
+
+  &__inner {
+    @extend .content-width;
+    position: relative;
+    top: 80px;
+    z-index: 2;
+  }
+
+  &__top {
+    width: 100%;
+    @extend .flex;
+    text-align: center;
+  }
+  &__left {
+    @extend .flex;
+  }
+  &__numberimage {
+    width: 30%;
+    padding-bottom: 20px;
+  }
+  &__tatamiimages {
+    display: none;
+  }
+  &__center {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  &__syokunin {
+    color: #9d8121;
+    font-size: 22px;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+  }
+  &__name {
+    font-size: 28px;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+
+    &-wrapper {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  }
+  &__englishsyokunin {
+    color: #9d8121;
+    font-size: 16px;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+  }
+  &__englishname {
+    font-size: 20px;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+  }
+
+  &__logo {
+    display: none;
+    font-family: "Spectral", serif;
+  }
+  &__syokuninimages {
+    margin-bottom: 30px;
+    background-image: url(../images/sushi_person.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 70%;
+    }
+  }
+
+  &__text {
+    width: 85%;
+    margin: 30px auto;
+    &-wrapper {
+      background-image: url(../images/text_bak.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 105vw;
+    }
+
+    &-japan {
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__douga {
+    &-images {
+      margin: 0 auto;
+      width: 100%;
+      height: 315px;
+      z-index: 2;
+    }
+  }
+
+  &__topimages {
+    display: none;
+  }
+
+  &__bottomimages {
+    width: 70vw;
+    display: inline-block;
+    position: relative;
+    top: -13px;
+    right: -40vw;
+    z-index: -1;
+  }
+}
+
+.footer {
+  margin-top: -250px;
+  height: 80px;
+  text-align: center;
+  &__inner {
+    @extend .content-width;
+  }
+
+  &__images {
+    width: 7vw;
+    margin: 0 auto;
+  }
+
+  &__p {
+    font-size: 14px;
+  }
+}
